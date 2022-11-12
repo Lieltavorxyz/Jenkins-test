@@ -20,7 +20,7 @@ pipeline {
         }
         stage ("Deploying.....") {
             steps {
-                echo "=======Testing========"
+                echo "=======Deploying========"
             }
         }
     }
