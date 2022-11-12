@@ -1,26 +1,27 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Fetching.....") {
+    stages {
+        stage ("Fetching.....") {
             steps {
                     sh 'echo "========Fetching========"'
             }
         }
-    }
-        stage("Building.....") {
+    
+        stage ("Building.....") {
             steps {
                 sh 'echo "=======Building========"'            
             }
                     
         }
-        stage("Testing.....") {
+        stage ("Testing.....") {
             steps {
                 sh 'echo "=======Testing========"'
             }
         }
-        stage("Deploying.....") {
+        stage ("Deploying.....") {
             steps {
                 sh 'echo "=======Testing========"'
             }
         }
     }
+}
