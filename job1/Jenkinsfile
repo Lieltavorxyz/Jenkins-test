@@ -3,24 +3,24 @@ pipeline {
     stages {
         stage ("Fetching.....") {
             steps {
-                    sh 'echo "========Fetching========"'
+                    echo "========Fetching========"
             }
         }
     
         stage ("Building.....") {
             steps {
-                sh 'echo "=======Building========"'            
+             echo "=======Building========"            
             }
                     
         }
         stage ("Testing.....") {
             steps {
-                sh 'echo "=======Testing========"'
+                echo "=======Testing========"
             }
         }
         stage ("Deploying.....") {
             steps {
-                sh 'echo "=======Testing========"'
+                echo "=======Testing========"
             }
         }
     }
