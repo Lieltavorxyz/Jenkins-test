@@ -28,12 +28,26 @@ pipeline{
     stages {
         stage ('Fetching......') {
             steps {
+                timeout(time: 3, unit: 'SECONDS') {
+
                 sh '''
+                    sleep 5
                     echo "Hello"
-                    ll
-                    ps aux
+                    ls -lah
+                    ping www.google.com
                 '''
             }
         }
     }
+            stage ('Build......') {
+                
+            steps {
+                retry (3)
+                    sh '''
+                    sleep 3
+                    echo "Finished"
+                    '''
+                }
+            }
+        }
 }
