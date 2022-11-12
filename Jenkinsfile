@@ -25,16 +25,24 @@
 
 pipeline{
     agent any
+
+    environment {
+        NAME = 'Liel Tavor'
+        cloneRepo = ''
+        DHCU = '' // Docker Hub Credentials Password
+        DHCP = '' // Docker Hub Credentials Password
+    }
     stages {
         stage ('Fetching......') {
             steps {
-                timeout(time: 3, unit: 'SECONDS') {
 
+                sh 'echo your name is $(NAME) '
+                timeout(time: 10, unit: 'SECONDS') {
                 sh '''
                     sleep 5
                     echo "Hello"
                     ls -lah
-                    ping www.google.com
+                    ping -c 3 www.google.com
                 '''
             }
         }
@@ -42,11 +50,11 @@ pipeline{
             stage ('Build......') {
                 
             steps {
-                retry (3)
-                    sh '''
-                    sleep 3
-                    echo "Finished"
-                    '''
+            retry (3)
+                sh '''
+                sleep 3
+                echo "Finished"
+                '''
                 }
             }
         }
